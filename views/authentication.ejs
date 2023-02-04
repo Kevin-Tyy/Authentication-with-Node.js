@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                   body {
+        background: linear-gradient(to right, rgb(84, 84, 209), rgb(54, 2, 65));
+      }
+      .form {
+        padding: 20px;
+        width: 400px;
+        height: auto;
+        background-color: rgb(158, 158, 158, 0.2);
+        backdrop-filter: blur(100%);
+        color: white;
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 3px solid rgb(129, 127, 127);
+        margin: auto;
+      }
+      .form h1 {
+        color: rgb(117, 135, 218);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      input{
+        width: 95%;
+        height: 40px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+      }
+     
+      
+      .button {
+        width: 95%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(77, 77, 235);
+        color: white;
+        margin-bottom: 10px;
+
+      }
+      .button:hover{
+        cursor: pointer;
+        background-color: blue;
+      }
+
+      .error-message {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 25px;
+        background-color: rgb(252, 147, 147);
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        padding-top: 11px;
+        color: rgb(180, 12, 12);
+        text-align: center;
+      }
+      .home-btn{
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+        .home-btn:hover{
+            cursor: pointer;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            /* border: 3px solid rgb(0, 0, 0); */
+
+        }
+        .div {
+        background: linear-gradient(60deg, rgb(139, 7, 172), rgb(224, 90, 218));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(90%, 10%);
+        filter:  blur(2px);
+    
+      }
+      .div-2 {
+        background: linear-gradient(60deg, rgb(11, 192, 117), rgb(4, 45, 228));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(250%, 230%);
+        filter:  blur(2px);
+
+
+      }
+      p{
+        text-align: center;
+        color: grey;
+      }
+    </style>
+</head>
+<body>
+  <div class="div"></div>
+  <div class="div-2"></div>
+
+
+  <form action="/gohome" method="post">
+    <button class="home-btn">Go to home</button>
+    
+  </form>
+    <form action="/authentication" method="post" class=form>
+
+        <p>Please confirm your password to continue</p>
+        <% if(messages.error){%>
+            <div class="error-message"><%= messages.error %></div>
+        <% } %>
+        <input type="password" placeholder="Confirm your password" name="password">
+        <button type="submit"  class="button">Submit</button>
+    </form>
+</body>
+</html>

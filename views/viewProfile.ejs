@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body{
+          background: linear-gradient(to right, rgb(84, 84, 209), rgb(54, 2, 65));
+        }
+        .form {
+        padding: 20px;
+        width: 400px;
+        height: auto;
+        background-color: rgb(158, 158, 158, 0.2);
+        backdrop-filter: blur(100%);
+        color: white;
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 3px solid rgb(129, 127, 127);
+        margin: auto;
+      }
+      
+      .button {
+        margin: 40px 0;
+        border: none;
+        height: 40px;
+        background-color: rgb(69, 69, 243);
+        color: rgb(255, 255, 255);
+        width: 100%;
+        border-radius: 10px;
+        transition: 0.2s;
+        
+      }
+      .button:hover {
+        background-color: rgb(255, 255, 255);
+        border: 1px solid blue;
+        color: blue;
+        cursor: pointer;
+      }
+       .info{
+        font-size: 20px;
+
+       } 
+    
+       .info p span{
+        color: grey;
+        padding-left: 20px;
+   
+       }
+       .home-btn{
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+        .home-btn:hover{
+            cursor: pointer;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            /* border: 3px solid rgb(0, 0, 0); */
+
+        }
+        .div {
+        background: linear-gradient(60deg, rgb(139, 7, 172), rgb(224, 90, 218));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(90%, 10%);
+        filter:  blur(2px);
+
+    
+      }
+      .div-2 {
+        background: linear-gradient(60deg, rgb(11, 192, 117), rgb(4, 45, 228));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(250%, 230%);
+        filter:  blur(2px);
+
+
+      }
+       
+    </style>
+</head>
+<body>
+  <div class="div"></div>
+  <div class="div-2"></div>
+
+  <form action="/gohome" method="post">
+    <button class="home-btn">Go to home</button>
+    
+  </form>
+    
+    <div>
+        <form action="/process" method="post" class="form">
+          <div class="info">
+            <p> username: <span><%= username %> </span></p>
+            <p>Email: <span><%= email %></span></p>  
+            <p>Password: <span><%= password %></span></p>
+          </div>
+               
+            <button type="submit" class="button">Edit</button><br>
+        </form>    
+    </div>
+</body>
+</html>

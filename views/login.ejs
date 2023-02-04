@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: linear-gradient(to right, rgb(84, 84, 209), rgb(54, 2, 65));
+      }
+      form {
+        padding: 20px;
+        width: 400px;
+        height: auto;
+        background-color: rgb(158, 158, 158, 0.2);
+        backdrop-filter: blur(100%);
+        color: white;
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+      form h1 {
+        color: rgb(103, 135, 221);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      input,
+      label,
+      button {
+        display: block;
+      }
+      input,
+      button {
+        width: 95%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+      }
+      hr {
+        border: 1px solid rgb(150, 150, 150, 0.5);
+      }
+
+      input {
+        margin-bottom: 40px;
+        background-color: rgb(197, 197, 197, 0.3);
+        padding-left: 15px;
+        width: 380px;
+        color: white;
+      }
+      ::placeholder {
+        color: rgb(219, 214, 214);
+      }
+      button {
+        margin: 40px 0;
+        border: none;
+        background-color: rgb(69, 69, 243);
+        color: rgb(255, 255, 255);
+        width: 100%;
+        transition: 0.3s;
+      }
+      button:hover {
+        background-color: rgb(31, 31, 196);
+        cursor: pointer;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+      p {
+        text-align: center;
+      }
+      a {
+        color: rgb(176, 176, 182);
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      a:hover {
+        color: blue;
+      }
+      .div {
+        background: linear-gradient(60deg, rgb(139, 7, 172), rgb(224, 90, 218));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(50%, 10%);
+      }
+      .div-2 {
+        background: linear-gradient(60deg, rgb(11, 192, 117), rgb(4, 45, 228));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: fixed;
+        z-index: -1;
+        transform: translate(180%, 50%);
+      }
+      .error-message {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 25px;
+        background-color: rgb(252, 147, 147);
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        padding-top: 11px;
+        color: rgb(180, 12, 12);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div"></div>
+    <div>
+      <form action="/login" method="post">
+        <h1>Login</h1>
+
+        <hr />
+
+        <br />
+        <% if(messages.error){%>
+        <div class="error-message"><%= messages.error %></div>
+        <% } %>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username"
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter password"
+        />
+        <button type="submit">Login</button>
+        <p>
+          Don't have an account?
+          <a href="/register">Sign up</a>
+        </p>
+      </form>
+    </div>
+    <div class="div-2"></div>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=/, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+              body {
+        background: linear-gradient(to right, rgb(84, 84, 209), rgb(54, 2, 65));
+      }
+      .form {
+        padding: 20px;
+        margin: auto;
+        width: 400px;
+        height: auto;
+        background-color: rgb(158, 158, 158, 0.2);
+        backdrop-filter: blur(100%);
+        color: white;
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 3px solid rgb(129, 127, 127);
+      }
+      input{
+        width: 95%;
+        height: 40px;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        border: none;
+      }
+      input:first-child{
+        margin-top: 20px;
+      }
+    
+    
+    
+      
+      .button {
+        width: 97%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(78, 78, 228);
+        color: white;
+        transition: 0.3s;
+        margin-bottom: 20px;
+      }
+      .button:hover{
+        background-color: blue;
+
+      }
+      .success-message {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 25px;
+        background-color: rgb(79, 202, 99);
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        padding-top: 11px;
+        color: rgb(22, 87, 9);
+        text-align: center;
+      }
+      .error-message {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 25px;
+        background-color: rgb(252, 147, 147);
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        padding-top: 11px;
+        color: rgb(180, 12, 12);
+        text-align: center;
+
+      }
+      h1{
+        color: grey;
+        text-align: center;
+        margin-bottom: -40px;
+      }
+           .home-btn{
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+        .home-btn:hover{
+            cursor: pointer;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            /* border: 3px solid rgb(0, 0, 0); */
+
+        }
+        .div {
+        background: linear-gradient(60deg, rgb(139, 7, 172), rgb(224, 90, 218));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(50%, 10%);
+        filter:  blur(2px);
+    
+      }
+      .div-2 {
+        background: linear-gradient(60deg, rgb(11, 192, 117), rgb(4, 45, 228));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(250%, 230%);
+        filter:  blur(2px);
+
+
+      }
+    </style>
+</head>
+<body>
+  <div class="div"></div>
+  <div class="div-2"></div>
+
+
+    <form action="/gohome" method="post">
+    <button class="home-btn">Go to home</button>
+    
+  </form>
+    <h1>Edit your account</h1>
+    <form action="/edit" method="post" class="form">
+      <% if(messages.success){%>
+        <div class="success-message"><%= messages.success %></div>
+    <% } %>
+    <% if(messages.error){%>
+      <div class="error-message"><%= messages.error %></div>
+  <% } %>
+        <input type="text" name="username" placeholder="Enter your new username...">
+  
+        <input type="password" name="password" placeholder="Enter your new password...">
+        <input type="password" name="password2" placeholder="Confirm your new pasword...">
+
+        <button type="submit" class="button">Submit</button>
+    </form>
+</body>
+</html>

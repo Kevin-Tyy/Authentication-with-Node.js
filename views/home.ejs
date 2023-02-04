@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+             background: linear-gradient(to right, rgb(84, 84, 209), rgb(54, 2, 65));
+        }
+        ul{
+            list-style-type: none;
+            
+        }
+        ul li{
+            float: right;
+            
+        }
+        button{
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            /* border: 3px solid rgb(0, 0, 0); */
+
+        }
+        .intro{
+            padding: 130px 0;
+        }
+        .intro p{
+            color: white;
+            font-size: 30px;
+           text-align: center;
+           letter-spacing: 2px;
+           word-spacing: 10px;
+        }
+        .intro p span{
+            color: grey;
+        }
+        .div {
+        background: linear-gradient(60deg, rgb(139, 7, 172), rgb(224, 90, 218));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translate(50%, 10%);
+        filter: blur(3px);
+      }
+      .div-2 {
+        background: linear-gradient(60deg, rgb(11, 192, 117), rgb(4, 45, 228));
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        position: fixed;
+        z-index: -1;
+        transform: translate(400%,  150%);
+        filter: blur(3px);
+
+      }
+   
+
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <div class="div-2"></div>
+  
+    
+    <div>
+        <div>
+        
+       
+            <ul>
+                <form action="/viewProfile" method="post">
+                    <li><button>View profile</button></li>
+                </form>
+                <form action="/logout" method="post">
+                    <li><button type="submit">Logout</button></li>
+                </form>    
+            </ul>
+
+        </div>
+        
+        <div class="intro">
+            <p>Hello <span><%= username %></span>! Welcome to my first Node.js web app</p>
+        </div>
+            
+        
+    </div>
+</body>
+</html>
