@@ -1,13 +1,13 @@
 
 const express = require("express");
 const mysql = require("mysql");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT
 const connection = require("./models/db_config");
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('express-flash');
 const multer = require('multer')
-
+const dotenv = require('dotenv').config();
 
 
 
